@@ -135,7 +135,7 @@ namespace BankAccountApp
 
             // Validate amount.
 
-            if (amount < 1000 || amount > 100000)
+            if (amount < 10000 || amount > 100000)
             {
                 MessageBox.Show("Please enter valid amount.");
                 return;

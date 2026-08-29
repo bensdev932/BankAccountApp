@@ -20,7 +20,7 @@ namespace BankAccountApp
 
         public void Deposit(decimal amount)
         {
-            if (amount < 1000 || amount >= 500000)
+            if (amount < 1000 || amount > 500000)
             {
                 throw new ArgumentException("Deposit amount must be between 1000 and 500000");
             }
@@ -36,7 +36,7 @@ namespace BankAccountApp
 
         public void Withdraw(decimal amount)
         {
-            if (amount < 1000 || amount > 100000)
+            if (amount < 10000 || amount > 100000)
             {
                 throw new ArgumentException("Withdrawal amount must be between ₱1,000.00 and ₱100,000.00.");
             }
