@@ -72,11 +72,10 @@
             // 
             AmountNum.Location = new Point(127, 469);
             AmountNum.Margin = new Padding(3, 4, 3, 4);
-            AmountNum.Maximum = new decimal(new int[] { 9999999, 0, 0, 0 });
+            AmountNum.Maximum = new decimal(new int[] { 99999999, 0, 0, 0 });
             AmountNum.Name = "AmountNum";
             AmountNum.Size = new Size(253, 27);
             AmountNum.TabIndex = 3;
-            AmountNum.ValueChanged += AmountNum_ValueChanged;
             // 
             // BanksAccountDataGrid
             // 

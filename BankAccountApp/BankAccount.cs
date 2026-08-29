@@ -6,7 +6,7 @@ namespace BankAccountApp
 {
     public class BankAccount
     {
-        public string Owner { get; set; } 
+        public string Owner { get; private set; } 
         public Guid AccountNumber { get; set; } 
         public decimal Balance { get; private set; } 
 
@@ -18,36 +18,54 @@ namespace BankAccountApp
             Balance = 0m;
         }
 
-        public void Deposit(decimal amount)
+        public string SetOwner(string owner)
         {
-            if (amount < 1000 || amount > 500000)
+            if (string.IsNullOrWhiteSpace(owner))
+                return "Owner cannot be empty.";
+
+            foreach (char c in owner)
             {
-                throw new ArgumentException("Deposit amount must be between 1000 and 500000");
+                if (!char.IsLetter(c) && c != ' ')
+                    return "Owner must contain letters and spaces only.";
             }
 
-            if (Balance + amount > 500000)
-            {
-                throw new ArgumentException("Deposit amount would exceed the maximum balance.");
-            }
-
-            Balance += amount;
+            Owner = owner;
+            return "Owner updated successfully.";
         }
 
 
-        public void Withdraw(decimal amount)
+        public string Deposit(decimal amount)
         {
-            if (amount < 10000 || amount > 100000)
+            if (amount < 10000 || amount > 500000)
             {
-                throw new ArgumentException("Withdrawal amount must be between ₱1,000.00 and ₱100,000.00.");
+                return "Deposit amount must be between 10,000 and 500,000.";
             }
 
-            if (amount > Balance )
+            if (amount + Balance > 500000)
             {
-                throw new InvalidOperationException("Insufficient funds.");
+                return "Deposit would exceed the maximum account balance of 500,000.";
+            }
+
+            Balance += amount;
+            return "Deposit successful.";
+
+        }
+            
+
+        public string Withdraw(decimal amount)
+        {
+            if (amount < 10000)
+            {
+                return "Withdrawal amount must be at least 10,000.";
+            }
+            
+            if (amount > Balance)
+            {
+                return "Insufficient balance for withdrawal.";
             }
 
             Balance -= amount;
-
+            return "Withdrawal successful.";    
         }
 
 
