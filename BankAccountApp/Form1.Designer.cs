@@ -44,9 +44,9 @@
             // 
             Owner.AutoSize = true;
             Owner.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Owner.Location = new Point(12, 27);
+            Owner.Location = new Point(14, 36);
             Owner.Name = "Owner";
-            Owner.Size = new Size(79, 30);
+            Owner.Size = new Size(101, 37);
             Owner.TabIndex = 0;
             Owner.Text = "Owner:";
             // 
@@ -54,40 +54,47 @@
             // 
             Amount.AutoSize = true;
             Amount.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Amount.Location = new Point(12, 345);
+            Amount.Location = new Point(14, 460);
             Amount.Name = "Amount";
-            Amount.Size = new Size(93, 30);
+            Amount.Size = new Size(118, 37);
             Amount.TabIndex = 1;
             Amount.Text = "Amount:";
             // 
             // OwnerTxt
             // 
-            OwnerTxt.Location = new Point(111, 34);
+            OwnerTxt.Location = new Point(127, 45);
+            OwnerTxt.Margin = new Padding(3, 4, 3, 4);
             OwnerTxt.Name = "OwnerTxt";
-            OwnerTxt.Size = new Size(204, 23);
+            OwnerTxt.Size = new Size(233, 27);
             OwnerTxt.TabIndex = 2;
             // 
             // AmountNum
             // 
-            AmountNum.Location = new Point(111, 352);
+            AmountNum.Location = new Point(127, 469);
+            AmountNum.Margin = new Padding(3, 4, 3, 4);
+            AmountNum.Maximum = new decimal(new int[] { 9999999, 0, 0, 0 });
             AmountNum.Name = "AmountNum";
-            AmountNum.Size = new Size(221, 23);
+            AmountNum.Size = new Size(253, 27);
             AmountNum.TabIndex = 3;
+            AmountNum.ValueChanged += AmountNum_ValueChanged;
             // 
             // BanksAccountDataGrid
             // 
             BanksAccountDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             BanksAccountDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            BanksAccountDataGrid.Location = new Point(395, 34);
+            BanksAccountDataGrid.Location = new Point(451, 45);
+            BanksAccountDataGrid.Margin = new Padding(3, 4, 3, 4);
             BanksAccountDataGrid.Name = "BanksAccountDataGrid";
-            BanksAccountDataGrid.Size = new Size(393, 285);
+            BanksAccountDataGrid.RowHeadersWidth = 51;
+            BanksAccountDataGrid.Size = new Size(449, 380);
             BanksAccountDataGrid.TabIndex = 4;
             // 
             // CreateBtn
             // 
-            CreateBtn.Location = new Point(138, 79);
+            CreateBtn.Location = new Point(158, 105);
+            CreateBtn.Margin = new Padding(3, 4, 3, 4);
             CreateBtn.Name = "CreateBtn";
-            CreateBtn.Size = new Size(126, 33);
+            CreateBtn.Size = new Size(144, 44);
             CreateBtn.TabIndex = 5;
             CreateBtn.Text = "Create Account";
             CreateBtn.UseVisualStyleBackColor = true;
@@ -95,9 +102,10 @@
             // 
             // DepositBtn
             // 
-            DepositBtn.Location = new Point(426, 342);
+            DepositBtn.Location = new Point(487, 456);
+            DepositBtn.Margin = new Padding(3, 4, 3, 4);
             DepositBtn.Name = "DepositBtn";
-            DepositBtn.Size = new Size(126, 33);
+            DepositBtn.Size = new Size(144, 44);
             DepositBtn.TabIndex = 6;
             DepositBtn.Text = "Deposit";
             DepositBtn.UseVisualStyleBackColor = true;
@@ -105,9 +113,10 @@
             // 
             // WithdrawBtn
             // 
-            WithdrawBtn.Location = new Point(621, 342);
+            WithdrawBtn.Location = new Point(710, 456);
+            WithdrawBtn.Margin = new Padding(3, 4, 3, 4);
             WithdrawBtn.Name = "WithdrawBtn";
-            WithdrawBtn.Size = new Size(126, 33);
+            WithdrawBtn.Size = new Size(144, 44);
             WithdrawBtn.TabIndex = 7;
             WithdrawBtn.Text = "Withdraw";
             WithdrawBtn.UseVisualStyleBackColor = true;
@@ -115,9 +124,9 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(WithdrawBtn);
             Controls.Add(DepositBtn);
             Controls.Add(CreateBtn);
@@ -126,6 +135,7 @@
             Controls.Add(OwnerTxt);
             Controls.Add(Amount);
             Controls.Add(Owner);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)AmountNum).EndInit();
@@ -144,5 +154,6 @@
         private Button CreateBtn;
         private Button DepositBtn;
         private Button WithdrawBtn;
+        
     }
 }
