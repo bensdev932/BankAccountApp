@@ -29,9 +29,17 @@ namespace BankAccountApp
                 return;
             }
 
+            if (InterestRateNum.Value > 0)
+            {
+                BankAccounts.Add(new SavingsAccount(OwnerTxt.Text, InterestRateNum.Value));
+            }
+            else 
+            {
             BankAccounts.Add(bankAccount);
 
             MessageBox.Show($"Account created for {bankAccount.Owner}");
+
+            }
 
             RefreshDataGrid();
         }
@@ -49,6 +57,7 @@ namespace BankAccountApp
            
             OwnerTxt.Clear();
             AmountNum.Value = 0m;
+            InterestRateNum.Value = 0m;
         }
 
         private void DepositBtn_Click(object sender, EventArgs e)

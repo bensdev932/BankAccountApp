@@ -36,8 +36,11 @@
             CreateBtn = new Button();
             DepositBtn = new Button();
             WithdrawBtn = new Button();
+            InterestRate = new Label();
+            InterestRateNum = new NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)AmountNum).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BanksAccountDataGrid).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)InterestRateNum).BeginInit();
             SuspendLayout();
             // 
             // Owner
@@ -90,10 +93,10 @@
             // 
             // CreateBtn
             // 
-            CreateBtn.Location = new Point(158, 105);
+            CreateBtn.Location = new Point(141, 185);
             CreateBtn.Margin = new Padding(3, 4, 3, 4);
             CreateBtn.Name = "CreateBtn";
-            CreateBtn.Size = new Size(144, 44);
+            CreateBtn.Size = new Size(219, 44);
             CreateBtn.TabIndex = 5;
             CreateBtn.Text = "Create Account";
             CreateBtn.UseVisualStyleBackColor = true;
@@ -101,10 +104,10 @@
             // 
             // DepositBtn
             // 
-            DepositBtn.Location = new Point(487, 456);
+            DepositBtn.Location = new Point(464, 452);
             DepositBtn.Margin = new Padding(3, 4, 3, 4);
             DepositBtn.Name = "DepositBtn";
-            DepositBtn.Size = new Size(144, 44);
+            DepositBtn.Size = new Size(184, 44);
             DepositBtn.TabIndex = 6;
             DepositBtn.Text = "Deposit";
             DepositBtn.UseVisualStyleBackColor = true;
@@ -112,20 +115,39 @@
             // 
             // WithdrawBtn
             // 
-            WithdrawBtn.Location = new Point(710, 456);
+            WithdrawBtn.Location = new Point(700, 452);
             WithdrawBtn.Margin = new Padding(3, 4, 3, 4);
             WithdrawBtn.Name = "WithdrawBtn";
-            WithdrawBtn.Size = new Size(144, 44);
+            WithdrawBtn.Size = new Size(174, 44);
             WithdrawBtn.TabIndex = 7;
             WithdrawBtn.Text = "Withdraw";
             WithdrawBtn.UseVisualStyleBackColor = true;
             WithdrawBtn.Click += WithdrawBtn_Click;
+            // 
+            // InterestRate
+            // 
+            InterestRate.AutoSize = true;
+            InterestRate.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            InterestRate.Location = new Point(14, 95);
+            InterestRate.Name = "InterestRate";
+            InterestRate.Size = new Size(154, 28);
+            InterestRate.TabIndex = 8;
+            InterestRate.Text = "Interest Rate (%)";
+            // 
+            // InterestRateNum
+            // 
+            InterestRateNum.Location = new Point(210, 96);
+            InterestRateNum.Name = "InterestRateNum";
+            InterestRateNum.Size = new Size(150, 27);
+            InterestRateNum.TabIndex = 9;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 600);
+            Controls.Add(InterestRateNum);
+            Controls.Add(InterestRate);
             Controls.Add(WithdrawBtn);
             Controls.Add(DepositBtn);
             Controls.Add(CreateBtn);
@@ -139,6 +161,7 @@
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)AmountNum).EndInit();
             ((System.ComponentModel.ISupportInitialize)BanksAccountDataGrid).EndInit();
+            ((System.ComponentModel.ISupportInitialize)InterestRateNum).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -153,6 +176,7 @@
         private Button CreateBtn;
         private Button DepositBtn;
         private Button WithdrawBtn;
-        
+        private Label InterestRate;
+        private NumericUpDown InterestRateNum;
     }
 }

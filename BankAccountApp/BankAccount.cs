@@ -8,7 +8,7 @@ namespace BankAccountApp
     {
         public string Owner { get; private set; } 
         public Guid AccountNumber { get; set; } 
-        public decimal Balance { get; private set; } 
+        public decimal Balance { get; protected set; } 
 
 
         public BankAccount(string owner)
@@ -26,7 +26,7 @@ namespace BankAccountApp
             foreach (char c in owner)
             {
                 if (!char.IsLetter(c) && c != ' ')
-                    return "Owner must contain letters and spaces only.";
+                    return "Owner must contain letters and spa ces only.";
             }
 
             Owner = owner;
@@ -34,7 +34,7 @@ namespace BankAccountApp
         }
 
 
-        public string Deposit(decimal amount)
+        public virtual string Deposit(decimal amount)
         {
             if (amount < 10000 || amount > 500000)
             {
